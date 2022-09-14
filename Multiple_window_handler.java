@@ -24,7 +24,7 @@ public class Multiple_window_handler {
 				//if (driver.getTitle().contains("XPath Practice- H Y R Tutorials")){
 				driver.switchTo().window(Handle);
 				System.out.println(Handle);
-				driver.findElement(By.xpath("//input[@class='firstName']")).sendKeys("misu");
+				driver.findElement(By.xpath("//input[@id='firstName']")).sendKeys("misu");
 				//System.out.println(Handle);
 				Thread.sleep(5000);
 				driver.close();
