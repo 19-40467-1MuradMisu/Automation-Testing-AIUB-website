@@ -1,5 +1,6 @@
 package net.timeandtraining.automation;
 
+//import net.timeandtraining.automation.FileReaderDemo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,6 +8,9 @@ import org.openqa.selenium.WebElement;
 public class Test {
 
 	public static void main(String[] args) {
+		 FileReaderDemo fr = new FileReaderDemo("C:\\Users\\Misu\\eclipse-workspace\\LearningSelenium\\src\\net\\timeandtraining\\automation\\forinput.txt");
+	        String username=fr.getData(0)[0];
+	        String password=fr.getData(0)[1];
 	 
 	WebDriver driver=Base.getdriver();
 	driver.get("https://www.aiub.edu/");
@@ -15,11 +19,12 @@ public class Test {
 	// for clicking any object
 	
 	element=driver.findElement(By.xpath("//input[@id='username']"));
-	element.sendKeys("19-40467-1");
+	element.sendKeys(username);
 	element=driver.findElement(By.xpath("//input[@id='password']"));
-	element.sendKeys("14901150");
+	element.sendKeys(password);
 	element=driver.findElement(By.xpath("//button[@type='submit']"));
 	element.click();
+	driver.quit();
 	
 	//element=driver.findElement(By.xpath("//span[@class='fa fa-sign-out']"));
 	//element.click();
